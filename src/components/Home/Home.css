@@ -1,0 +1,11 @@
+.outerContainer {
+    margin: 20px;
+    display: grid;
+    grid-template-columns: 1000px 550px;
+}
+
+.kmLogo {
+    height: 50px;
+    width: 50px;
+    margin-bottom: 30px;
+}

@@ -1,0 +1,14 @@
+.infoBox {
+    height: 600px;
+    width: 550px;
+    background: gray;
+    border: 3px solid red;
+    color: black;
+    display: grid;
+    grid-template-rows: 350px 30px 200px;
+}
+
+.infoImage {
+    height: 350px;
+    width: 250px;
+}

@@ -1,0 +1,58 @@
+.binder {
+    display: grid;
+    grid-template-columns: 500px 500px 100px;
+}
+
+.binderPage {
+    display: grid;
+    grid-template-columns: 150px 150px 150px;
+    grid-template-rows: 200px 200px 200px;
+}
+
+.cardBox {
+    height: 175px;
+    width: 125px;
+    margin: 10px;
+    color: black;
+    background: white;
+    position: relative;
+}
+
+.cardImage {
+    height: 175px;
+    width: 125px;
+    border: 3px solid white;
+}
+
+.darkCardImage {
+    height: 175px;
+    width: 125px;
+    filter: grayscale(100%);
+    border: 3px solid black;
+}
+
+.ownedCounter {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 20px;
+    width: 20px;
+    border: 1px solid black;
+    background: white;
+    opacity: 75%;
+    text-align: center;
+    color: black;
+}
+
+.rarity {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 20px;
+    width: 55px;
+    border: 1px solid black;
+    background: white;
+    opacity: 75%;
+    text-align: center;
+    color: black;
+}
