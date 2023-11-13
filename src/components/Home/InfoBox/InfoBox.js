@@ -9,7 +9,7 @@ const InfoBox = () => {
         <img className="infoImage" src={"https://images.ygoprodeck.com/images/cards/" + selected.dbCard.id + ".jpg"} alt={selected.dbCard.name} />
         <span>{selected.dbCard.name}</span>
         <span>{selected.dbCard.desc}</span>
-        <span>{selected.collectionCard.Set}</span>
+        <span>{selected?.dbCard?.cardSet?.set_name ?? ''}</span>
         <span>{selected.collectionCard['#']}</span>
     </div>
 };
