@@ -1,22 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useCards } from '../CardsContext.js';
 import Card from './Card/Card.js';
 import './Binder.css';
 
 const Binder = () => {
-    const { fdb, fCards, search, filterCards, page, set, view, searchedFdb, searchedFCards, resetDb, resetCollection } = useCards();
+    const { fdb, fCards, page, set, view } = useCards();
     const isCollection = view === 'collection';
-    const primarySet = isCollection ? searchedFCards : searchedFdb;
-    const secondarySet = isCollection ? searchedFdb : searchedFCards;
-    
-    useEffect(() => {
-        if(view === 'collection') {
-            resetDb()
-        } else {
-            resetCollection();
-        }
-        filterCards(search);
-    }, [fdb, fCards]);
+    const primarySet = isCollection ? fCards : fdb;
+    const secondarySet = isCollection ? fdb : fCards;
 
     return <div className="binder">
         {

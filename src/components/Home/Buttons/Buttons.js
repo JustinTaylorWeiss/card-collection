@@ -3,14 +3,20 @@ import { useCards } from '../CardsContext.js';
 import './Buttons.css';
 
 const Buttons = () => {
-    const { changePage, filterCards, filterSet, resetCollection, fdb, fCards, page, search, resetDb, view } = useCards();
+    const { changePage, filterSet, resetCollection, fdb, fCards, page, setCardSearch, resetDb, view } = useCards();
+
+    const primarySet = view === 'collection' ? fCards : fdb
+    const totalPages = Math.max( 
+        Math.ceil(((primarySet?.length ?? 0) / 9.0) - 1)
+        , 0
+    )
 
     return <div>
         <button className="pageButton" type="button" onClick={() => changePage(-2)}>Previous</button>
         <button className="pageButton" type="button" onClick={() => changePage(2)}>
-            Next{` ${page}/${Math.ceil((((view === 'collection' ? fCards : fdb)?.length ?? 0) / 9.0) - 1)}`}
+            Next{` ${page}/${totalPages}`}
         </button>
-        <input className="search" type="text" ref={search} onChange={() => filterCards(search)}></input>
+        <input className="search" type="text" onChange={(e) => {setCardSearch(e.target.value)}} ></input>
         <button type="button" onClick={() => resetCollection()}>Collection</button>
         <button type="button" onClick={() => resetDb()}>Database</button>
         <select id="dropdown" onChange={() => filterSet(document.getElementById('dropdown').value)}>
